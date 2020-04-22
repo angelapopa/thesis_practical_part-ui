@@ -34,7 +34,12 @@ class JsonTree extends Component {
     );
 
     const loadItems = () =>
-      fetch("https://epc-modelling-backend.herokuapp.com/resource/")
+      fetch(
+        "https://epc-modelling-backend.herokuapp.com/resource/" +
+          this.props.country.value +
+          "?page=" +
+          this.state.activePage
+      )
         .then((res) => (res.ok ? res : Promise.reject(res)))
         .then((res) => res.json());
 
