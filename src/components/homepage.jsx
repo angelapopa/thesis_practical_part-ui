@@ -12,7 +12,7 @@ class HomePage extends Component {
       <React.Fragment>
         <div style={{ height: 100 }}></div>
         <div style={{ margin: 20 }}>
-          <h5>Welcome to the EPC Modelling POC Project</h5>
+          <h5>Welcome to the EPC Modelling POC</h5>
         </div>
         <div style={{ margin: 100 }}>
           <img src={this.state.imageUrl} alt="" />
