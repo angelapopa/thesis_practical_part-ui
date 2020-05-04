@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/navbar";
 import HomePage from "./components/homepage";
+import AppDiagram from "./components/appdiagram";
 import JsonDataView from "./components/jsondataview";
 import UmlRepresentation from "./components/umlrepresentation";
 
@@ -22,6 +23,7 @@ class App extends Component {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
+              <Route path="/app-diagram" component={AppDiagram} />
               <Route path="/json" component={JsonDataView} />
               <Route path="/uml" component={UmlRepresentation} />
               {/* this route must stay last */}
