@@ -15,7 +15,7 @@ class AppDiagram extends Component {
           <h1>&nbsp;</h1>
           <h3>Data Import</h3>
         </div>
-        <img src={epcDataImport} alt="data-import" width={700}></img>
+        <img src={epcDataImport} alt="data-import" width={650}></img>
         <div>
           <h1>&nbsp;</h1>
           <h3>Application Architecture</h3>
