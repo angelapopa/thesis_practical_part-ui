@@ -17,6 +17,7 @@ const NavBar = ({ totalCounters }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
+          <Nav.Link href="/epcrating">EPC rating</Nav.Link>
           <Nav.Link href="/app-diagram">App diagram</Nav.Link>
           <Nav.Link href="/json">JSON data</Nav.Link>
           <Nav.Link href="/uml">UML representation</Nav.Link>

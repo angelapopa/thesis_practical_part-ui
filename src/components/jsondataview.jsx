@@ -31,6 +31,7 @@ class JsonDataView extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-2">
+              <h1>&nbsp;</h1>
               <Countries
                 countries={this.state.countries}
                 onClick={this.handleClick}
@@ -38,10 +39,16 @@ class JsonDataView extends Component {
             </div>
             <div className="col-md">
               {this.state.selectedCountry.id !== 0 && (
-                <JsonTree country={this.state.selectedCountry} />
+                <div>
+                  <h1>&nbsp;</h1>
+                  <JsonTree country={this.state.selectedCountry} />
+                </div>
               )}
               {this.state.selectedCountry.id === 0 && (
-                <span>Please select a country.</span>
+                <div>
+                  <h1>&nbsp;</h1>
+                  <h5>Please select a country.</h5>
+                </div>
               )}
             </div>
           </div>
