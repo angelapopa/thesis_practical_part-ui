@@ -31,6 +31,7 @@ class App extends Component {
               {/* this route must stay last */}
               <Route path="/" component={HomePage} />
             </Switch>
+            <span>&nbsp; v1.1.0</span>
           </div>
         </Router>
       </React.Fragment>

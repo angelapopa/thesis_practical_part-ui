@@ -16,7 +16,9 @@ class HomePage extends Component {
         </div>
         <div style={{ margin: 100 }}>
           <img src={this.state.imageUrl} alt="" />
-          <span>(random image)</span>
+          <div>
+            <span>(random image)</span>
+          </div>
         </div>
       </React.Fragment>
     );
