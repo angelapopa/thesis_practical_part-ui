@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
+import Navbar, { NavbarText } from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 // Stateless Functional Component
@@ -23,6 +23,7 @@ const NavBar = ({ totalCounters }) => {
           <Nav.Link href="/uml">UML representation</Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      <Navbar.Text>v1.1.0</Navbar.Text>
     </Navbar>
   );
 };
