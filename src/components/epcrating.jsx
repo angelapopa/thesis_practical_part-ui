@@ -147,25 +147,25 @@ class EPCRating extends Component {
                   </div>
                 )}
               </div>
-              <h5>&nbsp;</h5>
-              <div>
-                {this.state.goClicked === 1 && (
+            </div>
+            <h5>&nbsp;</h5>
+            <div>
+              {this.state.goClicked === 1 && (
+                <div>
                   <div>
-                    <div>
-                      The predication was based on epc ratings from&nbsp;
-                      {this.state.selectedCountry}.
-                    </div>
-                    <span>
-                      The frequency distribution of the available rated
-                      buildings are:
-                    </span>
-                    <img
-                      src={this.state.imgFrequencyPath}
-                      alt="Plot per Country"
-                    />
+                    The predication was based on epc ratings from&nbsp;
+                    {this.state.selectedCountry}.
                   </div>
-                )}
-              </div>
+                  <div style={{ marginBottom: 20 }}>
+                    The frequency distribution of the available rated buildings
+                    are:
+                  </div>
+                  <img
+                    src={this.state.imgFrequencyPath}
+                    alt="Plot per Country"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
