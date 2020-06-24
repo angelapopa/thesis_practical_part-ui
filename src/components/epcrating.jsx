@@ -61,7 +61,7 @@ class EPCRating extends Component {
 
           <div className="container">
             <div className="row">
-              <div className="col-md">
+              <div className="col-md" style={{ marginBottom: 100 }}>
                 <h5>Floor Area</h5>
                 <h5>Yearly Energy Consumption</h5>
                 <h5>Country of resindence</h5>
@@ -137,7 +137,7 @@ class EPCRating extends Component {
                   <div>
                     <h5 className="text-danger">Thank you!</h5>
                     <h5 className="text-danger">
-                      The entered values {this.state.selectedCountry} for are
+                      The entered values for {this.state.selectedCountry} are
                       &nbsp; {this.state.totalFloorArea}, &nbsp;
                       {this.state.yearlyEnergyConsumption}.
                     </h5>
@@ -146,11 +146,18 @@ class EPCRating extends Component {
                     </h5>
                   </div>
                 )}
+              </div>
+              <h5>&nbsp;</h5>
+              <div>
                 {this.state.goClicked === 1 && (
                   <div>
+                    <div>
+                      The predication was based on epc ratings from&nbsp;
+                      {this.state.selectedCountry}.
+                    </div>
                     <span>
                       The frequency distribution of the available rated
-                      buildings from {this.state.selectedCountry} are:
+                      buildings are:
                     </span>
                     <img
                       src={this.state.imgFrequencyPath}
