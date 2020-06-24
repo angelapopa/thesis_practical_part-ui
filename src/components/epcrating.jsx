@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
-import { isConditionalExpression } from "typescript";
+
+var images = require.context("../resources/epc-frequency", true);
 
 class EPCRating extends Component {
   state = {
@@ -17,6 +16,7 @@ class EPCRating extends Component {
     selectedCountry: "",
     validationError: "",
     goClicked: 0,
+    imgFrequencyPath: "",
   };
 
   handleCalculation = (event) => {
@@ -29,6 +29,9 @@ class EPCRating extends Component {
       return;
     }
     this.setState({ goClicked: 1 });
+    this.state.imgFrequencyPath = images(
+      "./" + this.state.selectedCountry + "_EPC_Plot.png"
+    );
     console.log(this.state.totalFloorArea);
     console.log(this.state.yearlyEnergyConsumption);
     console.log(this.state.selectedCountry);
@@ -40,6 +43,7 @@ class EPCRating extends Component {
       yearlyEnergyConsumption: "",
       selectedCountry: "",
       goClicked: 0,
+      imgFrequencyPath: "",
     });
   };
 
@@ -130,13 +134,29 @@ class EPCRating extends Component {
                   </h5>
                 )}
                 {this.state.goClicked === 1 && (
-                  <h5 className="text-danger">
-                    Thank you! The entered values are
-                    {this.state.totalFloorArea},
-                    {this.state.yearlyEnergyConsumption},
-                    {this.state.selectedCountry}! The Calculation is yet to be
-                    implemented!
-                  </h5>
+                  <div>
+                    <h5 className="text-danger">Thank you!</h5>
+                    <h5 className="text-danger">
+                      The entered values {this.state.selectedCountry} for are
+                      &nbsp; {this.state.totalFloorArea}, &nbsp;
+                      {this.state.yearlyEnergyConsumption}.
+                    </h5>
+                    <h5 className="text-danger">
+                      The Calculation is yet to be implemented!
+                    </h5>
+                  </div>
+                )}
+                {this.state.goClicked === 1 && (
+                  <div>
+                    <span>
+                      The frequency distribution of the available rated
+                      buildings from {this.state.selectedCountry} are:
+                    </span>
+                    <img
+                      src={this.state.imgFrequencyPath}
+                      alt="Plot per Country"
+                    />
+                  </div>
                 )}
               </div>
             </div>
