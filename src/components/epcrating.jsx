@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import ReactJson from "react-json-view";
-import Async from "react-async";
+import EstimatedRating from "./estimatedRating";
 
 var images = require.context("../resources/epc-frequency", true);
 
@@ -19,6 +18,7 @@ class EPCRating extends Component {
     validationError: "",
     goClicked: 0,
     imgFrequencyPath: "",
+    estimatedRating: "",
   };
 
   handleCalculation = (event) => {
@@ -36,6 +36,7 @@ class EPCRating extends Component {
         "./" + this.state.selectedCountry + "_EPC_Plot.png"
       ),
     });
+
     console.log(this.state.totalFloorArea);
     console.log(this.state.yearlyEnergyConsumption);
     console.log(this.state.selectedCountry);
@@ -56,20 +57,6 @@ class EPCRating extends Component {
       marginLeft: 50,
     };
 
-    const loadItems = () =>
-      fetch(
-        "https://epc-modelling-estimate-rating.herokuapp.com/api/estimate" +
-          "?floor_area=" +
-          this.state.totalFloorArea +
-          "&total_energy=" +
-          this.state.yearlyEnergyConsumption,
-        {
-          mode: "no-cors",
-        }
-      )
-        .then((res) => (res.ok ? res : Promise.reject(res)))
-        .then((res) => res.json());
-
     return (
       <React.Fragment>
         <div style={marginObj}>
@@ -82,7 +69,7 @@ class EPCRating extends Component {
               <div className="col-md" style={{ marginBottom: 100 }}>
                 <h5>Floor Area</h5>
                 <h5>Yearly Energy Consumption</h5>
-                <h5>Country of resindence</h5>
+                <h5>Country of residence</h5>
                 <h1>&nbsp;</h1>
                 <h1>&nbsp;</h1>
                 <h1>&nbsp;</h1>
@@ -159,29 +146,16 @@ class EPCRating extends Component {
                       &nbsp; {this.state.totalFloorArea}, &nbsp;
                       {this.state.yearlyEnergyConsumption}.
                     </h5>
-                    <h5 className="text-danger">
-                      <Async promiseFn={loadItems}>
-                        {({ data, err, isLoading }) => {
-                          if (isLoading) return "Loading...";
-                          if (err)
-                            return `Something went wrong: ${err.message}`;
-
-                          if (data)
-                            return (
-                              <ReactJson
-                                src={data}
-                                name="epcs"
-                                enableClipboard={false}
-                                enableAdd={false}
-                                displayObjectSize={false}
-                                displayDataTypes={false}
-                                collapsed="6"
-                                theme="monokai"
-                              />
-                            );
-                        }}
-                      </Async>
-                    </h5>
+                    <div>
+                      <h2>
+                        <EstimatedRating
+                          totalFloorArea={this.state.totalFloorArea}
+                          yearlyEnergyConsumption={
+                            this.state.yearlyEnergyConsumption
+                          }
+                        />
+                      </h2>
+                    </div>
                   </div>
                 )}
               </div>
