@@ -62,7 +62,10 @@ class EPCRating extends Component {
           "?floor_area=" +
           this.state.totalFloorArea +
           "&total_energy=" +
-          this.state.yearlyEnergyConsumption
+          this.state.yearlyEnergyConsumption,
+        {
+          mode: "no-cors",
+        }
       )
         .then((res) => (res.ok ? res : Promise.reject(res)))
         .then((res) => res.json());
