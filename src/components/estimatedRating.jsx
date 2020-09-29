@@ -8,8 +8,8 @@ class EstimatedRating extends Component {
 
     const loadItems = () =>
       fetch(
-        //"https://epc-modelling-estimate-rating.herokuapp.com/api/estimate" +
-        "http://localhost:5000/api/estimate" +
+        "https://epc-modelling-estimate-rating.herokuapp.com/api/estimate" +
+          //"http://localhost:5000/api/estimate" +
           "?floor_area=" +
           this.props.totalFloorArea +
           "&total_energy=" +
