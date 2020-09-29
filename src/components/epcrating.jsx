@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactJson from "react-json-view";
+import Async from "react-async";
 
 var images = require.context("../resources/epc-frequency", true);
 
@@ -29,9 +31,11 @@ class EPCRating extends Component {
       return;
     }
     this.setState({ goClicked: 1 });
-    this.state.imgFrequencyPath = images(
-      "./" + this.state.selectedCountry + "_EPC_Plot.png"
-    );
+    this.setState({
+      imgFrequencyPath: images(
+        "./" + this.state.selectedCountry + "_EPC_Plot.png"
+      ),
+    });
     console.log(this.state.totalFloorArea);
     console.log(this.state.yearlyEnergyConsumption);
     console.log(this.state.selectedCountry);
@@ -51,6 +55,17 @@ class EPCRating extends Component {
     const marginObj = {
       marginLeft: 50,
     };
+
+    const loadItems = () =>
+      fetch(
+        "https://epc-modelling-estimate-rating.herokuapp.com/api/estimate" +
+          "?floor_area=" +
+          this.state.totalFloorArea +
+          "&total_energy=" +
+          this.state.yearlyEnergyConsumption
+      )
+        .then((res) => (res.ok ? res : Promise.reject(res)))
+        .then((res) => res.json());
 
     return (
       <React.Fragment>
@@ -142,7 +157,27 @@ class EPCRating extends Component {
                       {this.state.yearlyEnergyConsumption}.
                     </h5>
                     <h5 className="text-danger">
-                      The Calculation is yet to be implemented!
+                      <Async promiseFn={loadItems}>
+                        {({ data, err, isLoading }) => {
+                          if (isLoading) return "Loading...";
+                          if (err)
+                            return `Something went wrong: ${err.message}`;
+
+                          if (data)
+                            return (
+                              <ReactJson
+                                src={data}
+                                name="epcs"
+                                enableClipboard={false}
+                                enableAdd={false}
+                                displayObjectSize={false}
+                                displayDataTypes={false}
+                                collapsed="6"
+                                theme="monokai"
+                              />
+                            );
+                        }}
+                      </Async>
                     </h5>
                   </div>
                 )}
