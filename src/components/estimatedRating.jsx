@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Async from "react-async";
-import ReactJson from "react-json-view";
 
 class EstimatedRating extends Component {
   render() {
@@ -24,7 +23,7 @@ class EstimatedRating extends Component {
             if (data)
               return (
                 <div>
-                  <pre>{JSON.stringify(data, null, 2)}</pre>
+                  <pre>{data}</pre>
                 </div>
               );
           }}

@@ -37,9 +37,9 @@ class EPCRating extends Component {
       ),
     });
 
-    console.log(this.state.totalFloorArea);
-    console.log(this.state.yearlyEnergyConsumption);
-    console.log(this.state.selectedCountry);
+    //console.log(this.state.totalFloorArea);
+    //console.log(this.state.yearlyEnergyConsumption);
+    //console.log(this.state.selectedCountry);
   };
 
   handleClear = (event) => {
@@ -140,12 +140,6 @@ class EPCRating extends Component {
                 )}
                 {this.state.goClicked === 1 && (
                   <div>
-                    <h5 className="text-danger">Thank you!</h5>
-                    <h5 className="text-danger">
-                      The entered values for {this.state.selectedCountry} are
-                      &nbsp; {this.state.totalFloorArea}, &nbsp;
-                      {this.state.yearlyEnergyConsumption}.
-                    </h5>
                     <div>
                       <h2>
                         <EstimatedRating
