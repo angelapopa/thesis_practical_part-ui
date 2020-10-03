@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import EstimatedRating from "./estimatedRating";
+import DenseTable from "./denseTable";
 
 var images = require.context("../resources/epc-frequency", true);
 
@@ -66,16 +67,36 @@ class EPCRating extends Component {
 
           <div className="container">
             <div className="row">
-              <div className="col-md" style={{ marginBottom: 100 }}>
+              <div
+                className="col-md"
+                style={{
+                  marginBottom: 100,
+                  maxWidth: "400px",
+                  tableLayout: "fixed",
+                }}>
                 <h5>Floor Area</h5>
                 <h5>Yearly Energy Consumption</h5>
                 <h5>Country of residence</h5>
                 <h1>&nbsp;</h1>
                 <h1>&nbsp;</h1>
                 <h1>&nbsp;</h1>
-                <h5>Predicted Rating</h5>
+
+                {this.state.goClicked === 1 && (
+                  <div>
+                    <h5>Predicted Rating</h5>
+                    <h1>&nbsp;</h1>
+                    <h5>Similar Dwellings (dummy data)</h5>
+                    <h1>&nbsp;</h1>
+                  </div>
+                )}
               </div>
-              <div className="col-md">
+              <div
+                className="col-md"
+                style={{
+                  marginBottom: 100,
+                  minWidth: "700px",
+                  tableLayout: "fixed",
+                }}>
                 <div>
                   <input
                     className="mb-2"
@@ -149,6 +170,10 @@ class EPCRating extends Component {
                           }
                         />
                       </h2>
+                    </div>
+                    <h1>&nbsp;</h1>
+                    <div>
+                      <DenseTable />
                     </div>
                   </div>
                 )}
