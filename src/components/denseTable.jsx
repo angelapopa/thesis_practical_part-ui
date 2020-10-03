@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -48,7 +48,7 @@ export default function DenseTable() {
           </TableHead>
           <TableBody>
             {rows.map((row) => (
-              <TableRow key={row.name}>
+              <TableRow key={row.nr}>
                 <TableCell component="th" scope="row">
                   {row.nr}
                 </TableCell>
@@ -63,5 +63,3 @@ export default function DenseTable() {
     </React.Fragment>
   );
 }
-
-//export default DenseTable;

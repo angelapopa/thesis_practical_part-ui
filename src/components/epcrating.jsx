@@ -162,16 +162,17 @@ class EPCRating extends Component {
                 {this.state.goClicked === 1 && (
                   <div>
                     <div>
-                      <h2>
+                      <h1>
                         <EstimatedRating
                           totalFloorArea={this.state.totalFloorArea}
                           yearlyEnergyConsumption={
                             this.state.yearlyEnergyConsumption
                           }
                         />
-                      </h2>
+                      </h1>
+                      <h1>&nbsp;</h1>
                     </div>
-                    <h1>&nbsp;</h1>
+
                     <div>
                       <DenseTable />
                     </div>
