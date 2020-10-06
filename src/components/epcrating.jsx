@@ -164,6 +164,7 @@ class EPCRating extends Component {
                     <div>
                       <h1>
                         <EstimatedRating
+                          country={this.state.selectedCountry}
                           totalFloorArea={this.state.totalFloorArea}
                           yearlyEnergyConsumption={
                             this.state.yearlyEnergyConsumption
