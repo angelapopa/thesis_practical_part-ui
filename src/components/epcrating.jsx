@@ -156,7 +156,7 @@ class EPCRating extends Component {
                 <h1>&nbsp;</h1>
                 {this.state.goClicked === 0 && (
                   <h5 className="text-danger">
-                    Please fill out the above data and hit Go!
+                    Please fill out the above input fields and hit Go!
                   </h5>
                 )}
                 {this.state.goClicked === 1 && (
