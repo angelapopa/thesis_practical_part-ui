@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import EstimatedRating from "./estimatedRating";
-import DenseTable from "./denseTable";
 
 var images = require.context("../resources/epc-frequency", true);
 
@@ -85,7 +84,7 @@ class EPCRating extends Component {
                   <div>
                     <h5>Predicted Rating</h5>
                     <h1>&nbsp;</h1>
-                    <h5>Similar Dwellings (dummy data)</h5>
+                    <h5>Similar Dwellings</h5>
                     <h1>&nbsp;</h1>
                   </div>
                 )}
@@ -162,7 +161,6 @@ class EPCRating extends Component {
                 {this.state.goClicked === 1 && (
                   <div>
                     <div>
-                      <h1>
                         <EstimatedRating
                           country={this.state.selectedCountry}
                           totalFloorArea={this.state.totalFloorArea}
@@ -170,12 +168,6 @@ class EPCRating extends Component {
                             this.state.yearlyEnergyConsumption
                           }
                         />
-                      </h1>
-                      <h1>&nbsp;</h1>
-                    </div>
-
-                    <div>
-                      <DenseTable />
                     </div>
                   </div>
                 )}

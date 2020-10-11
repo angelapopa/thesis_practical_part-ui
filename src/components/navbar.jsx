@@ -23,7 +23,7 @@ const NavBar = ({ totalCounters }) => {
           <Nav.Link href="/uml">UML representation</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-      <Navbar.Text>v1.2.0</Navbar.Text>
+      <Navbar.Text>v1.3.0</Navbar.Text>
     </Navbar>
   );
 };
