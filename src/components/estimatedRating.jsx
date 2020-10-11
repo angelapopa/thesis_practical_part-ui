@@ -8,8 +8,8 @@ class EstimatedRating extends Component {
 
     const loadItems = () =>
       fetch(
-        //"https://epc-modelling-estimate-rating.herokuapp.com/api/estimate-rating" +
-        "http://localhost:5000/api/estimate-rating" +
+        "https://epc-modelling-estimate-rating.herokuapp.com/api/estimate-rating" +
+        //"http://localhost:5000/api/estimate-rating" +
           "?country=" +
           this.props.country +
           "&floor_area=" +
@@ -24,15 +24,25 @@ class EstimatedRating extends Component {
           {({ data, err, isLoading }) => {
             if (isLoading) return "Loading...";
             if (err) return `Something went wrong: ${err.message}`;
-            if (data) return (
-              < div >
-                <h1>  {data['estimated-rating']} </h1>
-                <h1>&nbsp;</h1>
-              <div>
-                  <NeighboursTable neighbours={data['neighbors']}/>
-              </div>
-              </div>
-            )}}
+            if (data && (typeof (data['estimated-rating'] !== 'undefined')) && data['estimated-rating'] != null) {
+              return (
+                < div >
+                  <h1>  {data['estimated-rating']} </h1>
+                  <h1>&nbsp;</h1>
+                  <div>
+                    <NeighboursTable neighbours={data['neighbors']} />
+                  </div>
+                </div>
+              )
+            } else {
+              return (
+                < div >
+                  <h3>{data}</h3>
+                  <h5>Work in Progress</h5>
+                </div>
+              )
+            }
+          }}
         </Async>
       </React.Fragment>
     );
