@@ -8,13 +8,14 @@ class EPCRating extends Component {
     totalFloorArea: "",
     yearlyEnergyConsumption: "",
     countries: [
-      { value: "", display: "Country" },
-      { value: "France", display: "France" },
-      { value: "Scottland", display: "Scottland" },
-      { value: "Ireland", display: "Ireland" },
-      { value: "England", display: "England" },
+      { name: "", display: "Country" , energyFieldName: ""},
+      { name: "France", display: "France" , energyFieldName: "finalEnergyConsumption"},
+      { name: "Scottland", display: "Scottland", energyFieldName: "primaryEnergyDemand" },
+      { name: "Ireland", display: "Ireland" , energyFieldName: "finalEnergyDemand"},
+      { name: "England", display: "England", energyFieldName: "finalEnergyDemand"},
     ],
     selectedCountry: "",
+    selectedEnergyFieldName: "",
     validationError: "",
     goClicked: 0,
     imgFrequencyPath: "",
@@ -37,9 +38,10 @@ class EPCRating extends Component {
       ),
     });
 
-    //console.log(this.state.totalFloorArea);
-    //console.log(this.state.yearlyEnergyConsumption);
-    //console.log(this.state.selectedCountry);
+    console.log(this.state.totalFloorArea);
+    console.log(this.state.yearlyEnergyConsumption);
+    console.log(this.state.selectedCountry);
+    console.log(this.state.selectedEnergyFieldName)
   };
 
   handleClear = (event) => {
@@ -47,6 +49,7 @@ class EPCRating extends Component {
       totalFloorArea: "",
       yearlyEnergyConsumption: "",
       selectedCountry: "",
+      selectedEnergyFieldName: "",
       goClicked: 0,
       imgFrequencyPath: "",
     });
@@ -73,9 +76,10 @@ class EPCRating extends Component {
                   maxWidth: "400px",
                   tableLayout: "fixed",
                 }}>
+                <h5>Country of residence</h5>
+                <h6>&nbsp;</h6>
                 <h5>Floor Area</h5>
                 <h5>Yearly Energy Consumption</h5>
-                <h5>Country of residence</h5>
                 <h1>&nbsp;</h1>
                 <h1>&nbsp;</h1>
                 <h1>&nbsp;</h1>
@@ -96,6 +100,27 @@ class EPCRating extends Component {
                   minWidth: "700px",
                   tableLayout: "fixed",
                 }}>
+                 <div>
+                  <select
+                    value={this.state.selectedCountry}
+                    onChange={(e) =>
+                      this.setState({
+                        selectedCountry: e.target.value,
+                        selectedEnergyFieldName: this.state.countries.find(country => country.name === e.target.value).energyFieldName,
+                        validationError:
+                          e.target.value === ""
+                            ? "Please select a country of residence!"
+                            : "",
+                      })
+                    }>
+                    {this.state.countries.map((country) => (
+                      <option key={country.name} value={country.name}>
+                        {country.display}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <h5>&nbsp;</h5>
                 <div>
                   <input
                     className="mb-2"
@@ -116,25 +141,6 @@ class EPCRating extends Component {
                         yearlyEnergyConsumption: e.target.value,
                       })
                     }></input>
-                </div>
-                <div>
-                  <select
-                    value={this.state.selectedCountry}
-                    onChange={(e) =>
-                      this.setState({
-                        selectedCountry: e.target.value,
-                        validationError:
-                          e.target.value === ""
-                            ? "Please select a country of residence!"
-                            : "",
-                      })
-                    }>
-                    {this.state.countries.map((country) => (
-                      <option key={country.value} value={country.value}>
-                        {country.display}
-                      </option>
-                    ))}
-                  </select>
                 </div>
                 <div style={{ color: "red", marginTop: "5px" }}>
                   {this.state.validationError}
@@ -161,7 +167,8 @@ class EPCRating extends Component {
                 {this.state.goClicked === 1 && (
                   <div>
                     <div>
-                        <EstimatedRating
+                      <EstimatedRating
+                          energyFieldName={this.state.selectedEnergyFieldName}
                           country={this.state.selectedCountry}
                           totalFloorArea={this.state.totalFloorArea}
                           yearlyEnergyConsumption={

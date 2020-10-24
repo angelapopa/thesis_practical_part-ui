@@ -5,12 +5,15 @@ import NeighboursTable from "./neighboursTable";
 class EstimatedRating extends Component {
   render() {
     console.log("EstimatedRating - Rendered");
+    console.log(this.props.energyFieldName);
 
     const loadItems = () =>
       fetch(
         "https://epc-modelling-estimate-rating.herokuapp.com/api/estimate-rating" +
         //"http://localhost:5000/api/estimate-rating" +
-          "?country=" +
+          "?energy_prop=" +
+          this.props.energyFieldName + 
+          "&country=" +
           this.props.country +
           "&floor_area=" +
           this.props.totalFloorArea +
