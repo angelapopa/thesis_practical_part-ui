@@ -32,16 +32,11 @@ class EPCRating extends Component {
       return;
     }
     this.setState({ goClicked: 1 });
-    this.setState({
-      imgFrequencyPath: images(
-        "./" + this.state.selectedCountry + "_EPC_Plot.png"
-      ),
-    });
 
-    console.log(this.state.totalFloorArea);
-    console.log(this.state.yearlyEnergyConsumption);
-    console.log(this.state.selectedCountry);
-    console.log(this.state.selectedEnergyFieldName)
+    //console.log(this.state.totalFloorArea);
+    //console.log(this.state.yearlyEnergyConsumption);
+    //console.log(this.state.selectedCountry);
+    //console.log(this.state.selectedEnergyFieldName);
   };
 
   handleClear = (event) => {
@@ -107,6 +102,9 @@ class EPCRating extends Component {
                       this.setState({
                         selectedCountry: e.target.value,
                         selectedEnergyFieldName: this.state.countries.find(country => country.name === e.target.value).energyFieldName,
+                        imgFrequencyPath: images(
+                          "./" + e.target.value + "_EPC_Plot.png"
+                        ),
                         validationError:
                           e.target.value === ""
                             ? "Please select a country of residence!"
@@ -192,10 +190,13 @@ class EPCRating extends Component {
                     The frequency distribution of the available rated buildings
                     are:
                   </div>
-                  <img
-                    src={this.state.imgFrequencyPath}
-                    alt="Plot per Country"
-                  />
+                  <div>
+                    <img
+                      key={Date.now()}
+                      src={this.state.imgFrequencyPath}
+                      alt="Plot per Country"
+                      />
+                    </div>
                 </div>
               )}
             </div>
