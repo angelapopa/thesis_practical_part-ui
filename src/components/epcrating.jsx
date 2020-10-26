@@ -8,14 +8,16 @@ class EPCRating extends Component {
     totalFloorArea: "",
     yearlyEnergyConsumption: "",
     countries: [
-      { name: "", display: "Country" , energyFieldName: ""},
-      { name: "France", display: "France" , energyFieldName: "finalEnergyConsumption"},
-      { name: "Scottland", display: "Scottland", energyFieldName: "primaryEnergyDemand" },
-      { name: "Ireland", display: "Ireland" , energyFieldName: "finalEnergyDemand"},
-      { name: "England", display: "England", energyFieldName: "finalEnergyDemand"},
+      { name: "", display: "Country" , energyFieldName: "", floorMeasure: "", energyMeasure:""},
+      { name: "France", display: "France" , energyFieldName: "finalEnergyConsumption", floorMeasure: "&#x33A1;", energyMeasure:"kwh/year"},
+      { name: "Scottland", display: "Scottland", energyFieldName: "primaryEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
+      { name: "Ireland", display: "Ireland" , energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/year"},
+      { name: "England", display: "England", energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
     ],
     selectedCountry: "",
     selectedEnergyFieldName: "",
+    selectedFloorMeasure: "",
+    selectedEnergyMeasure: "",
     validationError: "",
     goClicked: 0,
     imgFrequencyPath: "",
@@ -45,6 +47,8 @@ class EPCRating extends Component {
       yearlyEnergyConsumption: "",
       selectedCountry: "",
       selectedEnergyFieldName: "",
+      selectedEnergyMeasure: "",
+      selectedFloorMeasure: "",
       goClicked: 0,
       imgFrequencyPath: "",
     });
@@ -102,6 +106,8 @@ class EPCRating extends Component {
                       this.setState({
                         selectedCountry: e.target.value,
                         selectedEnergyFieldName: this.state.countries.find(country => country.name === e.target.value).energyFieldName,
+                        selectedFloorMeasure: this.state.countries.find(country => country.name === e.target.value).floorMeasure,
+                        selectedEnergyMeasure: this.state.countries.find(country => country.name === e.target.value).energyMeasure,
                         imgFrequencyPath: images(
                           "./" + e.target.value + "_EPC_Plot.png"
                         ),
@@ -129,6 +135,8 @@ class EPCRating extends Component {
                       })
                     }
                   />
+                  &nbsp;&nbsp;
+                  <span dangerouslySetInnerHTML={{ __html: this.state.selectedFloorMeasure }}/>
                 </div>
                 <div>
                   <input
@@ -138,7 +146,10 @@ class EPCRating extends Component {
                       this.setState({
                         yearlyEnergyConsumption: e.target.value,
                       })
-                    }></input>
+                    }>
+                  </input>
+                  &nbsp;&nbsp;
+                  <span dangerouslySetInnerHTML={{ __html: this.state.selectedEnergyMeasure }}/>
                 </div>
                 <div style={{ color: "red", marginTop: "5px" }}>
                   {this.state.validationError}
