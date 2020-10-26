@@ -192,7 +192,6 @@ class EPCRating extends Component {
                   </div>
                   <div>
                     <img
-                      key={Date.now()}
                       src={this.state.imgFrequencyPath}
                       alt="Plot per Country"
                       />
