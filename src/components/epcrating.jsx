@@ -14,6 +14,12 @@ class EPCRating extends Component {
       { name: "Ireland", display: "Ireland" , energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/year"},
       { name: "England", display: "England", energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
     ],
+    epc_methodologies: [
+      { country: "France", epc_method:"unknown", epc_url:""},
+      { country: "Scottland", epc_method:"RdSAP", epc_url:"https://www.bregroup.com/"},
+      { country: "Ireland", epc_method:"BER, Dwelling Energy Assessment Procedure (DEAP)", epc_url:"https://www.seai.ie/home-energy/building-energy-rating-ber/"},
+      { country: "England", epc_method:"unknown", epc_url:""},
+    ],
     selectedCountry: "",
     selectedEnergyFieldName: "",
     selectedFloorMeasure: "",
@@ -206,10 +212,20 @@ class EPCRating extends Component {
                       src={this.state.imgFrequencyPath}
                       alt="Plot per Country"
                       />
-                    </div>
+                  </div>
+                  
+                  {(this.state.epc_methodologies.find(methodology => methodology.country === this.state.selectedCountry).epc_method) != 'unknown' && (
+                  <div>
+                      The methdology used for the EPC ratings in this dataset is: &nbsp;
+                      <a href={this.state.epc_methodologies.find(methodology => methodology.country === this.state.selectedCountry).epc_url}>
+                        {this.state.epc_methodologies.find(methodology => methodology.country === this.state.selectedCountry).epc_method}.
+                      </a>
+                  </div>)}
                 </div>
               )}
             </div>
+            <h5>&nbsp;</h5>
+            <h5>&nbsp;</h5>
           </div>
         </div>
       </React.Fragment>
