@@ -23,18 +23,18 @@ class NeighboursTable extends Component{
             <TableHead>
               <TableRow>
                 <TableCell align="right">Rating</TableCell>
+                <TableCell align="right">Floor&nbsp;Area</TableCell>
                 <TableCell align="right">
                   Yearly Energy&nbsp;Consumption
                 </TableCell>
-                <TableCell align="right">Floor&nbsp;Area</TableCell>              
               </TableRow>
             </TableHead>
             <TableBody>
               {this.props.neighbours.map((row) => (
                 <TableRow>
                   <TableCell align="right">{row['rating']}</TableCell>
-                  <TableCell align="right">{row['finalEnergyDemand']}</TableCell> 
                   <TableCell align="right">{row['totalFloorArea']}</TableCell>
+                  <TableCell align="right">{row['finalEnergyDemand']}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
