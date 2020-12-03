@@ -13,8 +13,7 @@ class JsonDataView extends Component {
       { id: 2, value: "Scottland", label: "Scottland" },
       { id: 3, value: "Ireland", label: "Ireland" },
       { id: 4, value: "England", label: "England" },
-      { id: 5, value: "United Kingdom", label: "UK (non-domenstic)" },
-      { id: 6, value: "other", label: "other" },
+      { id: 5, value: "other", label: "other" },
     ],
   };
 
@@ -28,6 +27,11 @@ class JsonDataView extends Component {
   render() {
     return (
       <div>
+        <div style={{ marginLeft: "15px" }}>
+          <div>
+            <span>Examples of dwelling data for each country.</span>
+          </div>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-md-2">
@@ -52,6 +56,14 @@ class JsonDataView extends Component {
               )}
             </div>
           </div>
+        </div>
+        <div style={{ marginLeft: "15px", marginTop: "25px" }}>
+            <div>
+              <span>Note: This examples show the original data type (double) for the fields floor area and energy consumption.</span>
+            </div>
+            <div>
+              <span> As of version 2.0.0 the field values used for the predictions changed from double to integer values, which is not refelected in this example data.</span>
+            </div>
         </div>
       </div>
     );
