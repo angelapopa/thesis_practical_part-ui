@@ -62,7 +62,7 @@ class JsonDataView extends Component {
               <span>Note: This examples show the original data type (double) for the fields floor area and energy consumption.</span>
             </div>
             <div>
-              <span> As of version 2.0.0 the field values used for the predictions changed from double to integer values, which is not refelected in this example data.</span>
+              <span> As of version 2.0.0 the field values used for the predictions changed from double to long values, which is not refelected in this example data.</span>
             </div>
         </div>
       </div>
