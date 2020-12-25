@@ -10,13 +10,13 @@ class EPCRating extends Component {
     countries: [
       { name: "", display: "Country" , energyFieldName: "", floorMeasure: "", energyMeasure:""},
       { name: "France", display: "France" , energyFieldName: "finalEnergyConsumption", floorMeasure: "&#x33A1;", energyMeasure:"kwh/year"},
-      { name: "Scottland", display: "Scottland", energyFieldName: "primaryEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
+      { name: "Scotland", display: "Scotland", energyFieldName: "primaryEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
       { name: "Ireland", display: "Ireland" , energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/year"},
       { name: "England", display: "England", energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
     ],
     epc_methodologies: [
       { country: "France", epc_method:"unknown", epc_url:""},
-      { country: "Scottland", epc_method:"RdSAP", epc_url:"https://www.bregroup.com/"},
+      { country: "Scotland", epc_method:"RdSAP", epc_url:"https://www.bregroup.com/"},
       { country: "Ireland", epc_method:"BER, Dwelling Energy Assessment Procedure (DEAP)", epc_url:"https://www.seai.ie/home-energy/building-energy-rating-ber/"},
       { country: "England", epc_method:"unknown", epc_url:""},
     ],

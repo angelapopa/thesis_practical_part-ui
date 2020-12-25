@@ -10,7 +10,7 @@ class JsonDataView extends Component {
     },
     countries: [
       { id: 1, value: "France", label: "France" },
-      { id: 2, value: "Scottland", label: "Scottland" },
+      { id: 2, value: "Scotland", label: "Scotland" },
       { id: 3, value: "Ireland", label: "Ireland" },
       { id: 4, value: "England", label: "England" },
       { id: 5, value: "other", label: "other" },
