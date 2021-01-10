@@ -1,0 +1,51 @@
+{
+  "_id": {
+    "$oid": "5fac17f75d277709746d0b10"
+  },
+  "awardedRating": {
+    "ratingLevel": "D",
+    "ratingPoints": 60
+  },
+  "creationDate": {
+    "$date": "2014-11-18T23:00:00.000Z"
+  },
+  "identificationNumber": "944052539442014111917391800949518",
+  "potentialRating": {
+    "ratingLevel": "B",
+    "ratingPoints": 82
+  },
+  "purpose": "RENTAL",
+  "ratedDwelling": {
+    "buildingAddress": {
+      "city": "Blackpool",
+      "country": "England",
+      "postalCode": "FY2 0RJ",
+      "street": "59, Fitzroy Road "
+    },
+    "identificationNumber": "4472339078",
+    "spatialData": {
+      "totalFloorArea": {
+        "unit": "SQUARE_METER",
+        "value": {
+          "$numberLong": "106"
+        }
+      }
+    },
+    "thermalData": {
+      "carbonFootprint": {
+        "unit": "KG_SQUARE_METER_YEAR",
+        "value": {
+          "$numberLong": "46"
+        }
+      },
+      "finalEnergyDemand": {
+        "unit": "KWH_SQUARE_METER_YEAR",
+        "value": {
+          "$numberLong": "238"
+        }
+      },
+      "mainHeatingFuelType": "GAS"
+    },
+    "type": "HOUSE"
+  }
+}

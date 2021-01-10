@@ -1,0 +1,77 @@
+{
+    "@context": "https://schema.org", 
+    "@type": "CreativeWork", 
+    "@id": "https://epc-modelling-app.herokuapp.com/944052539442014111917391800949518", 
+    "identifier": {
+        "@type": "PropertyValue", 
+        "propertyID": "identificationNumber", 
+        "value": "944052539442014111917391800949518"
+    }, 
+    "dateCreated": "2014-11-18T23:00:00.000Z", 
+    "about": {
+        "@type": "House", 
+        "identifier": {
+            "@type": "PropertyValue", 
+            "propertyID": "identificationNumber", 
+            "value": "4472339078"
+        }, 
+        "address": {
+            "@type": "PostalAddress", 
+            "addressCountry": "England", 
+            "addressLocality": "Blackpool", 
+            "postalCode": "FY2 0RJ", 
+            "streetAddress": "59, Fitzroy Road"
+        }, 
+        "floorSize": {
+            "@type": "QuantitiveValue", 
+            "value": 106, 
+            "unitCode": "MTK"
+        }, 
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue", 
+                "name": "Final Energy Demand", 
+                "valueReference": {
+                    "@Type": "QuantitativeValue", 
+                    "value": "238", 
+                    "unitCode": "28"
+                }
+            }, 
+            {
+                "@type": "PropertyValue", 
+                "name": "Carbon Footprint", 
+                "valueReference": {
+                    "@Type": "QuantitativeValue", 
+                    "value": "46", 
+                    "unitCode": "28"
+                }
+            }, 
+            {
+                "@type": "PropertyValue", 
+                "name": "Fuel Type", 
+                "value": "GAS"
+            }
+        ], 
+        "potentialAction": {
+            "@type": "LendAction"
+        }
+    },
+    "aggregateRating": [
+      {
+        "@type": "AggregateRating",
+        "ratingValue": "D",
+        "bestRating": "A",
+        "worstRating": "G",
+        "ratingCount": "100000",
+        "reviewAspect": "Measured Energy Consumption"
+      },
+      {
+        "@type": "AggregateRating",
+        "ratingValue": "B",
+        "bestRating": "A",
+        "worstRating": "G",
+        "ratingCount": "100000",
+        "reviewAspect": "Potential Energy Consumption"
+      }
+    ]
+}

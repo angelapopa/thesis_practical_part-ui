@@ -10,7 +10,7 @@ class JsonDataView extends Component {
     },
     countries: [
       { id: 1, value: "France", label: "France" },
-      { id: 2, value: "Scotland", label: "Scotland" },
+      { id: 2, value: "Scottland", label: "Scotland" },
       { id: 3, value: "Ireland", label: "Ireland" },
       { id: 4, value: "England", label: "England" },
       { id: 5, value: "other", label: "other" },
@@ -62,7 +62,7 @@ class JsonDataView extends Component {
               <span>Note: This examples show the original data type (double) for the fields floor area and energy consumption.</span>
             </div>
             <div>
-              <span> As of version 2.0.0 the field values used for the predictions changed from double to long values, which is not refelected in this example data.</span>
+              <span> As of version 2.0.0 the field values used for the predictions changed from double to long values, which is not reflected in this example data.</span>
             </div>
         </div>
       </div>

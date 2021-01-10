@@ -9,7 +9,7 @@ class EPCRating extends Component {
     yearlyEnergyConsumption: "",
     countries: [
       { name: "", display: "Country" , energyFieldName: "", floorMeasure: "", energyMeasure:""},
-      { name: "France", display: "France" , energyFieldName: "finalEnergyConsumption", floorMeasure: "&#x33A1;", energyMeasure:"kwh/year"},
+      { name: "France", display: "France" , energyFieldName: "finalEnergyConsumption", floorMeasure: "&#x33A1;", energyMeasure:"kWh/year"},
       { name: "Scotland", display: "Scotland", energyFieldName: "primaryEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
       { name: "Ireland", display: "Ireland" , energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/year"},
       { name: "England", display: "England", energyFieldName: "finalEnergyDemand", floorMeasure: "&#x33A1;", energyMeasure:"kWh/&#x33A1;/year"},
