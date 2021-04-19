@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.0">
+    <XMLTransactionHeaderInformation>
+        <XMLType></XMLType>
+        <XMLGeneratedBy></XMLGeneratedBy>
+        <CreatedDateAndTime>2021-01-13T16:32:52</CreatedDateAndTime>
+        <Transaction>create</Transaction>
+    </XMLTransactionHeaderInformation>
+    <SoftwareInfo/>
+     <Building>
+        <BuildingID id="building1"/>
+        <Site>
+            <SiteID id="site1"/>
+            <Address>
+                <CityMunicipality>Dublin 16</CityMunicipality>
+                <StateCode>IE</StateCode>
+            </Address>
+        </Site>
+        <ProjectStatus>
+            <EventType>proposed workscope</EventType>
+        </ProjectStatus>
+        <BuildingDetails>
+            <BuildingSummary>
+                <BuildingConstruction>
+                    <YearBuilt>1960</YearBuilt>
+                    <ResidentialFacilityType>apartment unit</ResidentialFacilityType>
+                    <NetFloorArea>42</NetFloorArea>
+                </BuildingConstruction>
+            </BuildingSummary>
+            <GreenBuildingVerifications>
+                <GreenBuildingVerification>
+                    <SystemIdentifier id="certificate1"/>
+                    <Type>other</Type>
+                    <Rating>G</Rating>
+                    <Year>2014</Year>
+                </GreenBuildingVerification>
+            </GreenBuildingVerifications>
+        </BuildingDetails>
+        <ModeledUsages>
+            <ModeledUsage>
+                <EnergyType>electricity</EnergyType>
+                <UnitofMeasure>kWh</UnitofMeasure>
+                <AnnualConsumption>11795</AnnualConsumption>
+            </ModeledUsage>    
+        </ModeledUsages>
+    </Building>
+</HPXML>

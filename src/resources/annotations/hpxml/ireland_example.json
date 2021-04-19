@@ -1,0 +1,48 @@
+{
+  "creationDate": "2014-04-24T10:00:00.000Z",
+  "ratedDwelling": {
+    "buildingAddress": {
+      "city": "Dublin 16",
+      "country": "Ireland"
+    },
+    "constructionYear": 1960,
+    "spatialData": {
+      "totalFloorArea": {
+        "unit": "SQUARE_METER",
+        "value": "42"
+      }
+    },
+    "thermalData": {
+      "carbonFootprint": {
+        "unit": "KG_SQUARE_METER_YEAR",
+        "value": "172"
+      },
+      "finalEnergyDemand": {
+        "unit": "KWH_SQUARE_METER_YEAR",
+        "value": "11795"
+      },
+      "spaceHeatingEnergyDemand": {
+        "unit": "KWH_YEAR",
+        "value": "9762"
+      },
+      "waterHeatingEnergyDemand": {
+        "unit": "KWH_YEAR",
+        "value": "1654"
+      },
+      "mainHeatingFuelType": "ELECTRICITY"
+    },
+    "type": "FLAT"
+  },
+  "purpose": "OTHER",
+  "awardedRating": {
+    "ratingLevel": "G",
+    "ratingPoints": 758
+  },
+  "usedMethodology": {
+    "calculationMethod": "Existing Dwelling BER",
+    "calculationName": "Dwelling Energy Assessment Procedure (DEAP)",
+    "softwareUsed": {
+      "softwareName": "DEAP"
+    }
+  }
+}
