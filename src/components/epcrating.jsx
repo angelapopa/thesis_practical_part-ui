@@ -162,10 +162,10 @@ class EPCRating extends Component {
                 </div>
                 <h1>&nbsp;</h1>
                 <button
-                  className="btn btn-outline-info btn-sm mr-2"
+                  className="btn btn-info btn-sm mr-2"
                   title="Calculate"
                   onClick={this.handleCalculation}>
-                  Go!
+                  Predict
                 </button>
                 <button
                   className="btn btn-outline-info btn-sm ml-2"
@@ -176,7 +176,7 @@ class EPCRating extends Component {
                 <h1>&nbsp;</h1>
                 {this.state.goClicked === 0 && (
                   <h5 className="text-danger">
-                    Please fill out the above input fields and hit Go!
+                    Please fill out the above input fields!
                   </h5>
                 )}
                 {this.state.goClicked === 1 && (
